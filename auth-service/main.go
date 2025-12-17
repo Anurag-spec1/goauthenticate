@@ -1,11 +1,12 @@
 package main
 
 import (
-	"auth-service/config"
-	"auth-service/routes"
+	"github.com/Anurag-spec1/goauthenticate/config"
+	"github.com/Anurag-spec1/goauthenticate/routes"
 
 	"github.com/gin-gonic/gin"
 )
+
 
 func main() {
 	config.LoadEnv()

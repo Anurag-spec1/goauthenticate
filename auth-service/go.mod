@@ -1,4 +1,5 @@
-module auth-service
+module github.com/Anurag-spec1/goauthenticate
+
 
 go 1.25.3
 

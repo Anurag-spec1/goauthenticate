@@ -1,12 +1,11 @@
 package routes
 
 import (
-	"auth-service/controllers"
-	"auth-service/middleware"
+	"github.com/Anurag-spec1/goauthenticate/controllers"
+	"github.com/Anurag-spec1/goauthenticate/middleware"
 
 	"github.com/gin-gonic/gin"
 )
-
 func RegisterAuthRoutes(r *gin.Engine) {
 
 	r.POST("/register", controllers.Register)

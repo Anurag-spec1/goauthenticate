@@ -5,15 +5,14 @@ import (
 	"os"
 	"time"
 
-	"auth-service/config"
-	"auth-service/models"
-	"auth-service/utils"
+	"github.com/Anurag-spec1/goauthenticate/config"
+	"github.com/Anurag-spec1/goauthenticate/models"
+	"github.com/Anurag-spec1/goauthenticate/utils"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 	"go.mongodb.org/mongo-driver/bson"
 )
-
 
 func Register(c *gin.Context) {
 	var req struct {
