@@ -15,7 +15,6 @@ import (
 )
 
 
-// REGISTER
 func Register(c *gin.Context) {
 	var req struct {
 		Name     string `json:"name"`
@@ -43,7 +42,6 @@ func Register(c *gin.Context) {
 	c.JSON(201, gin.H{"message": "Registered successfully"})
 }
 
-// LOGIN
 func Login(c *gin.Context) {
 	var req struct {
 		Email    string `json:"email"`
@@ -78,7 +76,6 @@ func Login(c *gin.Context) {
 	})
 }
 
-// REFRESH TOKEN
 func Refresh(c *gin.Context) {
 	var req struct {
 		RefreshToken string `json:"refresh_token"`
