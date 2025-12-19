@@ -20,10 +20,17 @@ func NewEmailService() *EmailService {
 func (es *EmailService) SendOTPEmail(to, otp string) error {
     provider := os.Getenv("EMAIL_PROVIDER")
     
+    // ADD THIS DEBUG LOGGING
+    log.Printf("🔍 DEBUG: EMAIL_PROVIDER='%s'", provider)
+    log.Printf("🔍 DEBUG: RESEND_API_KEY exists: %v", os.Getenv("RESEND_API_KEY") != "")
+    log.Printf("🔍 DEBUG: EMAIL_FROM='%s'", os.Getenv("EMAIL_FROM"))
+    
     if provider == "resend" {
+        log.Println("🔍 DEBUG: Using Resend provider")
         return es.sendViaResend(to, otp)
     }
     
+    log.Printf("🔍 DEBUG: Falling back to simulation (provider='%s')", provider)
     // Fallback to simulation
     return es.simulateEmail(to, otp)
 }
